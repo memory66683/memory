@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毛毛雨小说馆 - 原创小说展示与章节预览</title>
+    <meta name="description" content="毛毛雨小说馆：原创小说展示页，包含作品简介、章节预览、作者介绍与阅读入口。适合青春、幻想、悬疑小说读者。">
+    <meta name="keywords" content="小说展示, 原创小说, 青春小说, 悬疑小说, 章节预览, 小说网站, 毛毛雨, 小说馆">
+    <meta name="author" content="毛毛雨">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#2c3e50">
+    <meta property="og:site_name" content="毛毛雨小说馆">
+    <meta property="og:title" content="毛毛雨小说馆 - 原创小说展示与章节预览">
+    <meta property="og:description" content="毛毛雨小说馆提供原创小说简介、章节预览和作者故事，适合展示你的小说作品。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://memorysg.xin/">
+    <meta property="og:image" content="https://memorysg.xin/cover.jpg">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="毛毛雨小说馆 - 原创小说展示与章节预览">
+    <meta name="twitter:description" content="毛毛雨小说馆提供原创小说简介、章节预览和作者故事，适合展示你的小说作品。">
+    <meta name="twitter:image" content="https://memorysg.xin/cover.jpg">
+    <link rel="canonical" href="https://memorysg.xin/">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "毛毛雨小说馆",
+            "description": "毛毛雨小说馆：原创小说展示页，包含作品简介、章节预览、作者介绍与阅读入口。",
+            "url": "https://memorysg.xin/",
+            "author": {
+                "@type": "Person",
+                "name": "毛毛雨"
+            }
+        }
+    </script>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: "Segoe UI", "Segoe", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.75;
+            background: radial-gradient(circle at top, #f8f6ff 0%, #ebf2ff 45%, #f9f9fb 100%);
+            color: #1f2937;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .page-wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 32px 24px 48px;
+        }
+
+        header {
+            position: relative;
+            background: linear-gradient(135deg, #3f51b5, #6259d3);
+            color: #ffffff;
+            padding: 44px 32px;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(63, 81, 181, 0.16);
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -40px;
+            width: 180px;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+        }
+
+        header h1 {
+            margin: 0 0 14px;
+            font-size: clamp(2.75rem, 5vw, 4.5rem);
+            line-height: 1.05;
+        }
+
+        header p {
+            margin: 0;
+            font-size: clamp(1rem, 1.2vw, 1.25rem);
+            max-width: 780px;
+            opacity: 0.92;
+        }
+
+        .hero-meta {
+            margin-top: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            font-size: 0.96rem;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        nav {
+            margin: 30px 0 26px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #364fc7;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid rgba(55, 86, 255, 0.16);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        nav a:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 30px rgba(56, 89, 255, 0.14);
+            background: #f7f8ff;
+        }
+
+        article {
+            display: grid;
+            gap: 24px;
+        }
+
+        .split-columns {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .column {
+            display: grid;
+            gap: 16px;
+        }
+
+        .column h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #1e3a8a;
+        }
+
+        .chapter-link {
+            display: block;
+            padding: 14px 16px;
+            border-radius: 18px;
+            background: #f6f8ff;
+            color: #1f2937;
+            text-decoration: none;
+            border: 1px solid rgba(99, 102, 241, 0.18);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .chapter-link:hover {
+            background: #eef2ff;
+            transform: translateY(-1px);
+        }
+
+        .chapter-section {
+            padding-top: 10px;
+            border-top: 1px solid rgba(148, 163, 184, 0.16);
+        }
+
+        section {
+            background: #ffffff;
+            padding: 28px 28px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(93, 110, 210, 0.12);
+            box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+        }
+
+        article h2,
+        section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            color: #1f2937;
+        }
+
+        .chapter-intro,
+        section p {
+            font-size: 1rem;
+            color: #475569;
+            white-space: pre-wrap;
+            margin: 0;
+        }
+
+        .chapter-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .chapter-card {
+            display: grid;
+            gap: 10px;
+            padding: 22px;
+            border-radius: 20px;
+            background: #f8f9ff;
+            border: 1px solid rgba(92, 100, 242, 0.14);
+        }
+
+        .chapter-card h3 {
+            margin: 0;
+            font-size: 1.15rem;
+            color: #172554;
+        }
+
+        .chapter-card p {
+            margin: 0;
+            color: #475569;
+        }
+
+        .highlight {
+            display: inline-flex;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: #eef2ff;
+            color: #3b5bdb;
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        footer {
+            margin-top: 12px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 820px) {
+            .page-wrap {
+                padding: 24px 18px 36px;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 680px) {
+            header {
+                padding: 28px 20px;
+            }
+
+            nav {
+                gap: 8px;
+            }
+
+            section {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page-wrap">
+        <header>
+            <h1>毛毛雨小说馆</h1>
+            <p>原创小说展示与章节预览平台，让你的故事更容易被读者发现。</p>
+            <div class="hero-meta">
+                <span class="hero-pill">原创小说 · 青春悬疑 · 连载更新</span>
+                <span class="hero-pill">适合手机与电脑阅读</span>
+            </div>
+        </header>
+
+        <nav>
+            <a href="#intro">作品简介</a>
+            <a href="#chapters">章节目录</a>
+            <a href="#about-author">关于作者</a>
+            <a href="#latest-update">最新更新</a>
+        </nav>
+
+        <article>
+            <section id="intro">
+                <h2>作品简介</h2>
+                <p class="chapter-intro">这是一部描写青春与成长、记忆与梦想交织的短篇小说集。适合在早晨或夜晚阅读，带你进入一个带有诗意的故事世界。</p>
+            </section>
+
+            <section id="chapters">
+                <h2>散文与随笔</h2>
+                <div class="split-columns">
+                    <div class="column">
+                        <h3>散文</h3>
+                        <div class="chapter-list">
+                            <a id="prose-1" class="chapter-link" href="prose-1.html" target="_blank" rel="noopener noreferrer">雨后的秘密</a>
+                            <a id="prose-2" class="chapter-link" href="prose-2.html" target="_blank" rel="noopener noreferrer">城市的光影</a>
+                            <a id="prose-3" class="chapter-link" href="prose-3.html" target="_blank" rel="noopener noreferrer">夏日夜语</a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h3>随笔</h3>
+                        <div class="chapter-list">
+                            <a id="essay-1" class="chapter-link" href="essay-1.html" target="_blank" rel="noopener noreferrer">记忆的边缘</a>
+                            <a id="essay-2" class="chapter-link" href="essay-2.html" target="_blank" rel="noopener noreferrer">寒山归路</a>
+                            <a id="essay-3" class="chapter-link" href="essay-3.html" target="_blank" rel="noopener noreferrer">午后茶语</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about-author">
+                <h2>关于作者</h2>
+                <p class="chapter-intro">作者：毛毛雨。喜欢用文字记录日常的温度与心底的光。希望你的故事也能在这里留下印记。</p>
+            </section>
+
+            <section id="latest-update">
+                <h2>最新更新</h2>
+                <p class="chapter-intro">当前已发布六篇散文和随笔内容，更多故事正在连载中。欢迎收藏本页，关注后续章节与原创作品更新。</p>
+            </section>
+        </article>
+
+        <footer>
+            <p>全部原创，禁止侵权。如需转载，请注明作者与出处。</p>
+        </footer>
+    </main>
+</body>
+
+</html>
